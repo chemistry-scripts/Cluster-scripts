@@ -38,6 +38,17 @@ def main():
     # Get parameters from command line
     options = get_options()
 
+    # Run basic tests
+
+    # For every required program, run the corresponding tests
+    if options['adf']:
+        run_adf_tests()
+    elif options['g09']:
+        run_g09_tests()
+    elif options['g16']:
+        run_g16_tests()
+    elif options['orca']:
+        run_orca_tests()
 
 def get_options():
     """Check command line options and accordingly set computation parameters."""
