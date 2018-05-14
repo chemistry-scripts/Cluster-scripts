@@ -50,12 +50,13 @@ def main():
     elif options['orca']:
         run_orca_tests()
 
+
 def get_options():
     """Check command line options and accordingly set computation parameters."""
     parser = argparse.ArgumentParser(description=help_description(),
                                      epilog=help_epilog())
     parser.formatter_class = argparse.RawDescriptionHelpFormatter
-    parser.add_argument('-p', '--programs', default="all", type=str, nargs='+'
+    parser.add_argument('-p', '--programs', default="all", type=str, nargs='+',
                         help="Programs to test. Options: adf, g09, g16, orca, all")
 
     try:
@@ -102,7 +103,7 @@ def help_description():
 
 
 def help_epilog():
-    """Return additionnal help message."""
+    """Return additional help message."""
     return """."""
 
 
