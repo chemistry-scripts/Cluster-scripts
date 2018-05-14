@@ -66,33 +66,11 @@ def get_options():
         sys.exit(2)
 
     # Get values from parser
-    options = dict.fromkeys(['adf', 'g09', 'g16', 'orca'])
-    if 'adf' in args.programs:
-        options['adf'] = True
-    else:
-        options['adf'] = False
-    if 'g09' in args.programs:
-        options['g09'] = True
-    else:
-        options['g09'] = False
-    if 'g16' in args.programs:
-        options['g16'] = True
-    else:
-        options['g16'] = False
-    if 'orca' in args.programs:
-        options['orca'] = True
-    else:
-        options['orca'] = False
-    if 'all' in args.programs:
-        options['adf'] = True
-        options['g09'] = True
-        options['g16'] = True
-        options['orca'] = True
-    else:
-        options['adf'] = False
-        options['g09'] = False
-        options['g16'] = False
-        options['orca'] = False
+    options = dict.fromkeys(['adf', 'g09', 'g16', 'orca'], False)
+    options['adf'] = 'adf' in args.programs or 'all' in args.programs
+    options['g09'] = 'g09' in args.programs or 'all' in args.programs
+    options['g16'] = 'g16' in args.programs or 'all' in args.programs
+    options['orca'] = 'orca' in args.programs or 'all' in args.programs
 
     return options
 
