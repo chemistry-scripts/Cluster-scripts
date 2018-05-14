@@ -75,6 +75,26 @@ def get_options():
     return options
 
 
+def run_adf_tests():
+    """Run all adf based tests"""
+    return
+
+
+def run_g09_tests():
+    """Run all g09 based tests"""
+    return
+
+
+def run_g16_tests():
+    """Run all g16 based tests"""
+    return
+
+
+def run_orca_tests():
+    """Run all orca based tests"""
+    return
+
+
 def help_description():
     """Return description of program for help message."""
     return """Test suite for submission scripts."""
