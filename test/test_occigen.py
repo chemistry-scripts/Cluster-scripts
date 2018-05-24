@@ -12,10 +12,7 @@ Requires Python3 to be installed.
 
 import argparse
 import sys
-import os
 import logging
-import shlex
-import re
 
 
 def main():
@@ -39,6 +36,7 @@ def main():
     options = get_options()
 
     # Run basic tests
+    run_generic_tests()
 
     # For every required program, run the corresponding tests
     if options['adf']:
@@ -73,6 +71,11 @@ def get_options():
     options['orca'] = 'orca' in args.programs or 'all' in args.programs
 
     return options
+
+
+def run_generic_tests():
+    """Run all generic tests"""
+    return
 
 
 def run_adf_tests():
